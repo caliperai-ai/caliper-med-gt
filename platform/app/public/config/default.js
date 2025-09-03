@@ -3,7 +3,24 @@
 window.config = {
   name: 'config/default.js',
   routerBasename: null,
-  // whiteLabeling: {},
+  whiteLabeling: {
+    createLogoComponentFn: function (React) {
+      return React.createElement(
+        'a',
+        {
+          target: '_self',
+          rel: 'noopener noreferrer',
+          className: 'inline-flex items-center',
+          href: '/',
+        },
+        React.createElement('img', {
+          src: './caliper-ai-logo-dark.svg',
+          className: 'h-8 w-auto',
+          alt: 'Caliper AI',
+        })
+      );
+    },
+  },
   extensions: [],
   modes: [],
   customizationService: {},
