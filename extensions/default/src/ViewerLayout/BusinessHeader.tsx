@@ -5,11 +5,11 @@ import { Button, Icons, useModal } from '@ohif/ui-next';
 import { useSystem } from '@ohif/core';
 import { Toolbar } from '../Toolbar/Toolbar';
 
-function BusinessHeader({ 
-  servicesManager, 
-  appConfig, 
-  hotkeysManager, 
-  commandsManager 
+function BusinessHeader({
+  servicesManager,
+  appConfig,
+  hotkeysManager,
+  commandsManager
 }: any) {
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -69,7 +69,7 @@ function BusinessHeader({
             {t('Header:Studies')}
           </Button>
         )}
-        
+
         {/* CaliperMedGT Logo */}
         <div className="flex items-center">
           <div className="text-xl font-bold text-primary">CaliperMedGT</div>

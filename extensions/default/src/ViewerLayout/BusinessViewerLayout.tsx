@@ -75,7 +75,7 @@ function BusinessViewerLayout({
 
   const getComponent = (id: string) => {
     const entry = extensionManager.getModuleEntry(id);
-    
+
     if (!entry || !entry.component) {
       throw new Error(
         `${id} is not valid for an extension module or no component found from extension ${id}.`
@@ -126,7 +126,7 @@ function BusinessViewerLayout({
         hotkeysManager={hotkeysManager}
         commandsManager={commandsManager}
       />
-      
+
       {/* Main Content Area */}
       <div className="flex-1 flex overflow-hidden">
         <ResizablePanelGroup {...resizablePanelGroupProps}>

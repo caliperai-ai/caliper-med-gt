@@ -88,7 +88,7 @@ function FloatingToolbar({ servicesManager, commandsManager, extensionManager }:
               <div className="text-xs font-medium text-muted-foreground mb-2">Primary Tools</div>
               <Toolbar buttonSection="primary" />
             </div>
-            
+
             {/* Segmentation Tools Section */}
             <div className="space-y-1 border-t border-border pt-3">
               <div className="text-xs font-medium text-muted-foreground mb-2">Segmentation</div>

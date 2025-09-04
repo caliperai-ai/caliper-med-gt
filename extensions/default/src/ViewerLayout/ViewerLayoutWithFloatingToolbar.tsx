@@ -16,7 +16,7 @@ function ViewerLayoutWithFloatingToolbar(props: any) {
     <div className="relative w-full h-full">
       {/* Standard ViewerLayout */}
       <ViewerComponent {...modifiedProps} />
-      
+
       {/* Floating Toolbar Overlay */}
       <FloatingToolbar
         servicesManager={props.servicesManager}
