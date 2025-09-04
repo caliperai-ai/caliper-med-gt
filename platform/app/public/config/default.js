@@ -8,21 +8,19 @@ window.config = {
       return React.createElement(
         'div',
         {
-          className: 'flex items-center space-x-2',
+          className: 'flex items-center space-x-3',
         },
+        React.createElement('img', {
+          src: './caliper-ai-logo-dark.svg',
+          alt: 'Caliper AI Logo',
+          className: 'h-8 w-auto',
+        }),
         React.createElement(
           'div',
           {
             className: 'text-xl font-bold text-primary',
           },
-          'CaliperMedGT'
-        ),
-        React.createElement(
-          'div',
-          {
-            className: 'text-xs bg-primary/10 text-primary px-2 py-1 rounded-full',
-          },
-          'Medical Imaging'
+          'MedGT'
         )
       );
     },

@@ -1,6 +1,26 @@
 export default {
   'viewportOverlay.topLeft': [
     {
+      id: 'ViewportLabel',
+      inheritsFrom: 'ohif.overlayItem',
+      label: '',
+      title: 'Viewport orientation',
+      condition: ({ viewportId }) => {
+        // Show orientation label for MPR viewports
+        return viewportId && (
+          viewportId.includes('mpr-axial') || 
+          viewportId.includes('mpr-sagittal') || 
+          viewportId.includes('mpr-coronal')
+        );
+      },
+      contentF: ({ viewportId }) => {
+        if (viewportId?.includes('mpr-axial')) return 'Axial';
+        if (viewportId?.includes('mpr-sagittal')) return 'Sagittal';
+        if (viewportId?.includes('mpr-coronal')) return 'Coronal';
+        return '';
+      },
+    },
+    {
       id: 'StudyDate',
       inheritsFrom: 'ohif.overlayItem',
       label: '',
