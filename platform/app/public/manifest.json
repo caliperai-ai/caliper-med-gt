@@ -1,7 +1,7 @@
 {
-  "name": "OHIF Viewer",
-  "short_name": "Viewer",
-  "description": "OHIF Viewer",
+  "name": "MedGT",
+  "short_name": "MedGT",
+  "description": "MedGT Medical Imaging Viewer",
   "dir": "auto",
   "lang": "en-US",
   "orientation": "any",
