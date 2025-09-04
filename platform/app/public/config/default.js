@@ -6,18 +6,24 @@ window.config = {
   whiteLabeling: {
     createLogoComponentFn: function (React) {
       return React.createElement(
-        'a',
+        'div',
         {
-          target: '_self',
-          rel: 'noopener noreferrer',
-          className: 'inline-flex items-center',
-          href: '/',
+          className: 'flex items-center space-x-2',
         },
-        React.createElement('img', {
-          src: './caliper-ai-logo-dark.svg',
-          className: 'h-8 w-auto',
-          alt: 'Caliper AI',
-        })
+        React.createElement(
+          'div',
+          {
+            className: 'text-xl font-bold text-primary',
+          },
+          'CaliperMedGT'
+        ),
+        React.createElement(
+          'div',
+          {
+            className: 'text-xs bg-primary/10 text-primary px-2 py-1 rounded-full',
+          },
+          'Medical Imaging'
+        )
       );
     },
   },

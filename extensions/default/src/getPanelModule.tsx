@@ -1,5 +1,7 @@
 import React from 'react';
 import { WrappedPanelStudyBrowser } from './Panels';
+import ToolbarPanel from './Panels/ToolbarPanel';
+import { Toolbox } from './utils/Toolbox';
 import i18n from 'i18next';
 
 // TODO:
@@ -22,6 +24,39 @@ function getPanelModule({ commandsManager, extensionManager, servicesManager }) 
           servicesManager={servicesManager}
         />
       ),
+    },
+    {
+      name: 'toolbarPanel',
+      iconName: 'tab-linear',
+      iconLabel: 'Tools',
+      label: 'Tools',
+      component: props => (
+        <ToolbarPanel
+          {...props}
+          commandsManager={commandsManager}
+          extensionManager={extensionManager}
+          servicesManager={servicesManager}
+        />
+      ),
+    },
+    {
+      name: 'segmentationToolsPanel',
+      iconName: 'tab-segmentation',
+      iconLabel: 'Segmentation Tools',
+      label: 'Segmentation Tools',
+      component: props => {
+        const { toolbarService } = servicesManager.services;
+        return (
+          <div className="h-full bg-card border-r border-border">
+            <div className="p-2">
+              <Toolbox
+                buttonSectionId={toolbarService.sections.segmentationToolbox}
+                title="Segmentation Tools"
+              />
+            </div>
+          </div>
+        );
+      },
     },
   ];
 }

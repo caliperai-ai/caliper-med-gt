@@ -17,6 +17,9 @@ function ViewerHeader({ appConfig }: withAppTypes<{ appConfig: AppTypes.Config }
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Check if we're in segmentation mode
+  const isSegmentationMode = location.pathname.includes('segmentation');
+
   const onClickReturnButton = () => {
     const { pathname } = location;
     const dataSourceIdx = pathname.indexOf('/', 1);
@@ -119,9 +122,11 @@ function ViewerHeader({ appConfig }: withAppTypes<{ appConfig: AppTypes.Config }
         </div>
       }
     >
-      <div className="relative flex justify-center gap-[4px]">
-        <Toolbar buttonSection="primary" />
-      </div>
+      {!isSegmentationMode && (
+        <div className="relative flex justify-center gap-[4px]">
+          <Toolbar buttonSection="primary" />
+        </div>
+      )}
     </Header>
   );
 }

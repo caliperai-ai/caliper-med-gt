@@ -1,0 +1,406 @@
+/* Business Icon Enhancement for CaliperMedGT */
+
+/* Icon color variables for better contrast */
+:root {
+  --icon-primary: #2563eb;
+  --icon-secondary: #64748b;
+  --icon-muted: #94a3b8;
+  --icon-accent: #0ea5e9;
+  --icon-success: #10b981;
+  --icon-warning: #f59e0b;
+  --icon-destructive: #ef4444;
+  --icon-background: #ffffff;
+  --icon-foreground: #1e293b;
+}
+
+/* Dark mode icon colors */
+.dark {
+  --icon-primary: #3b82f6;
+  --icon-secondary: #94a3b8;
+  --icon-muted: #64748b;
+  --icon-accent: #38bdf8;
+  --icon-success: #34d399;
+  --icon-warning: #fbbf24;
+  --icon-destructive: #f87171;
+  --icon-background: #0f172a;
+  --icon-foreground: #e2e8f0;
+}
+
+/* Enhanced icon visibility classes */
+.icon-primary {
+  color: var(--icon-primary) !important;
+}
+
+.icon-secondary {
+  color: var(--icon-secondary) !important;
+}
+
+.icon-muted {
+  color: var(--icon-muted) !important;
+}
+
+.icon-accent {
+  color: var(--icon-accent) !important;
+}
+
+.icon-success {
+  color: var(--icon-success) !important;
+}
+
+.icon-warning {
+  color: var(--icon-warning) !important;
+}
+
+.icon-destructive {
+  color: var(--icon-destructive) !important;
+}
+
+/* High contrast icon modifier */
+.icon-high-contrast {
+  filter: contrast(1.2) brightness(1.1);
+}
+
+/* Ensure current color inheritance works properly */
+.text-current {
+  color: currentColor !important;
+}
+
+/* TOOLBAR ICON VISIBILITY FIXES */
+/* Force visible colors for all toolbar icons */
+[data-cy] svg,
+[data-tool] svg,
+.toolbar svg {
+  color: var(--icon-foreground) !important;
+  stroke: currentColor !important;
+  fill: currentColor !important;
+}
+
+/* Main toolbar container fixes */
+.bg-muted button svg,
+.bg-muted [data-cy] svg,
+.bg-muted [data-tool] svg {
+  color: var(--icon-foreground) !important;
+}
+
+/* ToolButton component specific fixes */
+button[class*="bg-transparent"] svg,
+button[class*="text-foreground/80"] svg,
+.text-foreground\/80 svg {
+  color: var(--icon-foreground) !important;
+}
+
+/* Business header toolbar specifically */
+.business-header .toolbar svg,
+.business-header .bg-muted svg {
+  color: var(--icon-foreground) !important;
+}
+
+/* Rounded toolbar containers */
+.rounded-lg svg,
+.rounded-md svg {
+  color: var(--icon-foreground) !important;
+}
+
+/* Button variants */
+button[data-cy] svg,
+button[data-tool] svg {
+  color: var(--icon-foreground) !important;
+}
+
+/* Hover states for toolbar icons */
+[data-cy]:hover svg,
+[data-tool]:hover svg,
+.toolbar button:hover svg {
+  color: var(--icon-primary) !important;
+}
+
+/* Active tool state */
+[data-active="true"] svg,
+.active svg {
+  color: var(--icon-background) !important;
+}
+
+/* Specific fixes for common tool icons */
+svg[stroke="currentColor"],
+svg[fill="currentColor"] {
+  color: var(--icon-foreground) !important;
+}
+
+/* TOOLBOX SPECIFIC FIXES */
+/* Fix for toolbox buttons (ohif.toolBoxButton) */
+.bg-popover button,
+.bg-popover [class*="text-foreground"] {
+  color: var(--icon-foreground) !important;
+}
+
+.bg-popover button svg,
+.bg-popover svg {
+  color: var(--icon-foreground) !important;
+}
+
+.bg-popover button:hover,
+.bg-popover button:hover svg {
+  color: var(--icon-primary) !important;
+}
+
+/* Fix for toolbox content in panels */
+.bg-muted button,
+.bg-muted [class*="text-"] {
+  color: var(--icon-foreground) !important;
+}
+
+.bg-muted button svg,
+.bg-muted svg {
+  color: var(--icon-foreground) !important;
+}
+
+/* Fix disabled toolbox buttons */
+.text-foreground\/70,
+.text-foreground\/80 {
+  color: var(--icon-muted) !important;
+}
+
+/* ULTRA HIGH PRIORITY TOOLBAR ICON FIXES */
+/* These rules use higher specificity to override ToolButton defaults */
+
+/* Target all buttons with ToolButton structure */
+button.inline-flex.items-center.justify-center,
+button.inline-flex.items-center.justify-center svg {
+  color: var(--icon-foreground) !important;
+}
+
+/* Target toolbar containers specifically */
+.toolbar button,
+.toolbar button svg,
+.bg-muted button,
+.bg-muted button svg {
+  color: var(--icon-foreground) !important;
+}
+
+/* Business header toolbar - highest priority */
+.business-header .toolbar button svg,
+.business-header .bg-muted button svg {
+  color: var(--icon-foreground) !important;
+}
+
+/* CRITICAL FIX: Override ToolButton default styling */
+/* The ToolButton component uses 'text-foreground/80' which makes icons barely visible */
+.bg-transparent.text-foreground\/80,
+.bg-transparent.text-foreground\/80 svg,
+button.bg-transparent.text-foreground\/80 svg {
+  color: var(--icon-foreground) !important;
+}
+
+/* Target the exact ToolButton styling combinations */
+.inline-flex.items-center.justify-center svg,
+.inline-flex.items-center.justify-center.bg-transparent svg {
+  color: var(--icon-foreground) !important;
+}
+
+/* Fix hover states for ToolButton */
+.bg-transparent.text-foreground\/80:hover svg,
+button.bg-transparent:hover svg {
+  color: var(--icon-primary) !important;
+}
+
+/* Override any low-opacity text classes */
+[class*="text-foreground/"] {
+  color: var(--icon-foreground) !important;
+}
+
+/* Very aggressive fixes for invisible icons */
+.bg-transparent svg,
+.text-foreground svg {
+  color: var(--icon-foreground) !important;
+}
+
+/* Override ToolButton default classes */
+.inline-flex svg,
+.items-center svg,
+.justify-center svg {
+  color: var(--icon-foreground) !important;
+}
+
+/* Force all SVG elements in buttons to be visible */
+button svg {
+  color: var(--icon-foreground) !important;
+  opacity: 1 !important;
+}
+
+/* Ensure SVG stroke and fill inherit color properly */
+svg {
+  stroke: currentColor !important;
+}
+
+svg[fill="currentColor"] {
+  fill: currentColor !important;
+}
+
+/* Business header icons */
+.business-header .icon-primary,
+.business-header [class*="text-primary"] svg {
+  color: var(--icon-primary) !important;
+}
+
+.business-header .icon-muted,
+.business-header [class*="text-muted-foreground"] svg {
+  color: var(--icon-muted) !important;
+}
+
+/* Business sidebar icons */
+.business-sidebar .icon-accent,
+.business-sidebar [class*="text-accent"] svg {
+  color: var(--icon-accent) !important;
+}
+
+/* Segmentation panel icons */
+.business-segmentation-panel .icon-success,
+.business-segmentation-panel [class*="text-success"] svg {
+  color: var(--icon-success) !important;
+}
+
+.business-segmentation-panel .icon-destructive,
+.business-segmentation-panel [class*="text-destructive"] svg {
+  color: var(--icon-destructive) !important;
+}
+
+/* SEGMENTATION PANEL VISIBILITY FIXES */
+.business-segmentation-panel [class*="text-muted-foreground"] {
+  color: var(--icon-foreground) !important;
+}
+
+.business-segmentation-panel .text-current {
+  color: var(--icon-foreground) !important;
+}
+
+/* Button icon enhancements */
+.btn-icon svg,
+button svg {
+  color: currentColor;
+  transition: color 0.2s ease-in-out;
+}
+
+/* Hover state improvements */
+button:hover svg,
+.btn-icon:hover svg {
+  filter: brightness(1.1);
+}
+
+/* Focus state for accessibility */
+button:focus svg,
+.btn-icon:focus svg {
+  outline: 2px solid var(--icon-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Specific overrides for problematic text colors */
+.text-foreground\/80 {
+  color: var(--icon-foreground) !important;
+}
+
+.text-muted-foreground {
+  color: var(--icon-muted) !important;
+}
+
+/* Force visibility for any remaining invisible icons */
+.invisible-icon-fix svg,
+.invisible-icon-fix * {
+  color: var(--icon-foreground) !important;
+}
+
+/* Ultra-high-priority CSS targeting for ToolButton component structure */
+button.inline-flex.items-center.justify-center {
+  color: var(--icon-primary, #000) !important;
+  opacity: 1 !important;
+}
+
+button.inline-flex.items-center.justify-center:hover {
+  color: var(--icon-primary, #000) !important;
+  opacity: 1 !important;
+}
+
+/* Business header toolbar specific overrides */
+.business-header .toolbar button.inline-flex.items-center.justify-center {
+  color: var(--icon-primary, #000) !important;
+  opacity: 1 !important;
+  background-color: transparent !important;
+}
+
+.business-header .toolbar button.inline-flex.items-center.justify-center:hover {
+  color: var(--icon-primary, #000) !important;
+  opacity: 1 !important;
+  background-color: var(--icon-background-hover, rgba(0, 0, 0, 0.1)) !important;
+}
+
+/* Exact structure targeting for the BusinessHeader center toolbar */
+.business-header .bg-muted.rounded-lg.toolbar button {
+  color: var(--icon-primary, #000) !important;
+  opacity: 1 !important;
+}
+
+.business-header .bg-muted.rounded-lg.toolbar button svg {
+  color: var(--icon-primary, #000) !important;
+  opacity: 1 !important;
+  fill: var(--icon-primary, #000) !important;
+}
+
+/* Override text-foreground/80 specifically */
+.business-header button.bg-transparent.text-foreground\/80 {
+  color: var(--icon-primary, #000) !important;
+}
+
+.business-header button.bg-transparent.text-foreground\/80:hover {
+  color: var(--icon-primary, #000) !important;
+}
+
+/* Primary toolbar section specific targeting */
+.business-header div[class*="bg-muted"] button {
+  color: var(--icon-primary, #000) !important;
+}
+
+.business-header div[class*="bg-muted"] button svg {
+  color: inherit !important;
+  opacity: 1 !important;
+}
+
+/* EMERGENCY FIX: Force ALL toolbar icons to be visible */
+/* These rules target any button that might be invisible in toolbars */
+[class*="toolbar"] button,
+[class*="Toolbar"] button,
+div[class*="bg-muted"] button,
+.flex.items-center.space-x-2 button {
+  color: var(--icon-primary, #2563eb) !important;
+  opacity: 1 !important;
+}
+
+[class*="toolbar"] button svg,
+[class*="Toolbar"] button svg,
+div[class*="bg-muted"] button svg,
+.flex.items-center.space-x-2 button svg {
+  color: var(--icon-primary, #2563eb) !important;
+  opacity: 1 !important;
+  fill: currentColor !important;
+}
+
+/* Force visibility for any button with common invisible class patterns */
+button[class*="text-foreground"],
+button[class*="bg-transparent"] {
+  color: var(--icon-primary, #2563eb) !important;
+}
+
+button[class*="text-foreground"] svg,
+button[class*="bg-transparent"] svg {
+  color: var(--icon-primary, #2563eb) !important;
+  opacity: 1 !important;
+}
+
+/* Nuclear option: Force ALL buttons in business-header to be visible */
+.business-header button {
+  color: var(--icon-primary, #2563eb) !important;
+}
+
+.business-header button svg {
+  color: var(--icon-primary, #2563eb) !important;
+  opacity: 1 !important;
+}

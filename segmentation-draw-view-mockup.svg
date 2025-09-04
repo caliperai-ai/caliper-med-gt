@@ -1,0 +1,30 @@
+<svg width="700" height="480" viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main viewport -->
+  <rect x="120" y="40" width="540" height="400" rx="18" fill="#f4f6fa" stroke="#b0b8c1" stroke-width="2"/>
+  <text x="390" y="70" font-size="22" font-family="Arial" fill="#333" text-anchor="middle">Image Viewport</text>
+
+  <!-- Segmentation overlays -->
+  <ellipse cx="320" cy="220" rx="60" ry="40" fill="none" stroke="#28a745" stroke-width="4"/>
+  <rect x="480" y="180" width="80" height="60" fill="none" stroke="#007bff" stroke-width="4"/>
+  <polygon points="250,320 270,370 320,350 300,310" fill="none" stroke="#ffc107" stroke-width="4"/>
+  <text x="320" y="220" font-size="14" font-family="Arial" fill="#28a745">Segment A</text>
+  <text x="520" y="210" font-size="14" font-family="Arial" fill="#007bff">Segment B</text>
+  <text x="295" y="340" font-size="14" font-family="Arial" fill="#ffc107">Segment C</text>
+
+  <!-- Toolbar -->
+  <rect x="20" y="40" width="80" height="400" rx="12" fill="#fff" stroke="#b0b8c1" stroke-width="2"/>
+  <text x="60" y="70" font-size="16" font-family="Arial" fill="#333" text-anchor="middle">Tools</text>
+  <!-- Tool icons -->
+  <circle cx="60" cy="110" r="18" fill="#007bff"/>
+  <text x="60" y="115" font-size="16" font-family="Arial" fill="#fff" text-anchor="middle">B</text>
+  <circle cx="60" cy="160" r="18" fill="#28a745"/>
+  <text x="60" y="165" font-size="16" font-family="Arial" fill="#fff" text-anchor="middle">E</text>
+  <circle cx="60" cy="210" r="18" fill="#ffc107"/>
+  <text x="60" y="215" font-size="16" font-family="Arial" fill="#fff" text-anchor="middle">AI</text>
+  <rect x="42" y="260" width="36" height="36" rx="8" fill="#e9ecef" stroke="#b0b8c1" stroke-width="1"/>
+  <text x="60" y="283" font-size="16" font-family="Arial" fill="#333" text-anchor="middle">...</text>
+
+  <!-- Minimal status bar -->
+  <rect x="120" y="450" width="540" height="24" rx="6" fill="#e9ecef"/>
+  <text x="390" y="467" font-size="14" font-family="Arial" fill="#555" text-anchor="middle">Drawing: Brush | Segment: A | 12cc</text>
+</svg>

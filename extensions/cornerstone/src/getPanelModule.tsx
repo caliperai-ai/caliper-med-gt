@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Toolbox } from '@ohif/extension-default';
 import PanelSegmentation from './panels/PanelSegmentation';
+import PanelSegmentationWithConditionalTools from './panels/PanelSegmentationWithConditionalTools';
 import ActiveViewportWindowLevel from './components/ActiveViewportWindowLevel';
 import PanelMeasurement from './panels/PanelMeasurement';
 
@@ -73,6 +74,13 @@ const getPanelModule = ({ commandsManager, servicesManager, extensionManager }: 
       iconLabel: 'Segmentation',
       label: 'Segmentation',
       component: wrappedPanelSegmentation,
+    },
+    {
+      name: 'panelSegmentationConditionalTools',
+      iconName: 'tab-segmentation',
+      iconLabel: 'Segmentation',
+      label: 'Segmentation',
+      component: PanelSegmentationWithConditionalTools,
     },
     {
       name: 'panelSegmentationNoHeader',

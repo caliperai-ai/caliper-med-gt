@@ -133,8 +133,8 @@ const Trigger = ({
         disabled
           ? 'text-common-bright hover:bg-primary-dark hover:text-primary-light cursor-not-allowed opacity-40'
           : isOpen
-            ? 'bg-background text-foreground/80'
-            : 'text-foreground/80 hover:bg-background hover:text-highlight bg-transparent',
+            ? 'bg-white !text-black border border-gray-300'
+            : '!bg-white !text-black border border-gray-300 hover:bg-gray-100',
         className
       )}
       variant="ghost"
@@ -143,8 +143,8 @@ const Trigger = ({
       disabled={disabled}
     >
       <Icons.ByName
-        name="tool-layout"
-        className="h-7 w-7"
+        name="tool-layout-default"
+        className="h-7 w-7 !text-black"
       />
     </Button>
   );

@@ -4,9 +4,12 @@ import initToolGroups from './initToolGroups';
 
 const ohif = {
   layout: '@ohif/extension-default.layoutTemplateModule.viewerLayout',
+  floatingLayout: '@ohif/extension-default.layoutTemplateModule.floatingToolbarLayout',
+  floatingRibbonLayout: '@ohif/extension-default.layoutTemplateModule.floatingRibbonLayout',
   sopClassHandler: '@ohif/extension-default.sopClassHandlerModule.stack',
   hangingProtocol: '@ohif/extension-default.hangingProtocolModule.default',
   leftPanel: '@ohif/extension-default.panelModule.seriesList',
+  toolbarPanel: '@ohif/extension-default.panelModule.toolbarPanel',
 };
 
 const cornerstone = {
@@ -189,13 +192,14 @@ function modeFactory({ modeConfiguration }) {
         path: 'template',
         layoutTemplate: ({ location, servicesManager }) => {
           return {
-            id: ohif.layout,
+            id: ohif.floatingRibbonLayout,
             props: {
-              leftPanels: [ohif.leftPanel],
-              leftPanelResizable: true,
-              rightPanels: [cornerstone.panelTool],
+              leftPanels: [],
+              leftPanelClosed: true,
+              leftPanelResizable: false,
+              rightPanels: ['@ohif/extension-cornerstone.panelModule.panelSegmentationConditionalTools'],
+              rightPanelClosed: false,
               rightPanelResizable: true,
-              // leftPanelClosed: true,
               viewports: [
                 {
                   namespace: cornerstone.viewport,

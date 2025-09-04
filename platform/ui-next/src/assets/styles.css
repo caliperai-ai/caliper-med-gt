@@ -1,3 +1,6 @@
+/* Business Icons Enhancement */
+@import '../styles/business-icons.css';
+
 /* CUSTOM OHIF SCROLLBAR */
 .ohif-scrollbar {
   scrollbar-color: #173239 transparent;
