@@ -198,8 +198,9 @@ function modeFactory({ modeConfiguration }) {
               leftPanelClosed: true,
               leftPanelResizable: false,
               rightPanels: ['@ohif/extension-cornerstone.panelModule.panelSegmentationConditionalTools'],
-              rightPanelClosed: false,
+              rightPanelClosed: true,
               rightPanelResizable: true,
+              rightPanelWidth: 320,
               viewports: [
                 {
                   namespace: cornerstone.viewport,

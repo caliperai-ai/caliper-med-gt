@@ -20,6 +20,11 @@ function ViewerHeader({ appConfig }: withAppTypes<{ appConfig: AppTypes.Config }
   // Check if we're in segmentation mode
   const isSegmentationMode = location.pathname.includes('segmentation');
 
+  // Don't render header at all in segmentation mode (for floating header instead)
+  if (isSegmentationMode) {
+    return null;
+  }
+
   const onClickReturnButton = () => {
     const { pathname } = location;
     const dataSourceIdx = pathname.indexOf('/', 1);

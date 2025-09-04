@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
+import { useLocation } from 'react-router-dom';
 
 import { InvestigationalUseDialog } from '@ohif/ui-next';
 import { HangingProtocolService, CommandsManager } from '@ohif/core';
@@ -149,6 +150,11 @@ function ViewerLayout({
 
   const viewportComponents = viewports.map(getViewportComponentData);
 
+  // Check if we're in segmentation mode to determine height
+  const location = useLocation();
+  const isSegmentationMode = location.pathname.includes('segmentation');
+  const contentHeight = isSegmentationMode ? '100vh' : 'calc(100vh - 52px)';
+
   return (
     <div>
       <ViewerHeader
@@ -159,7 +165,7 @@ function ViewerLayout({
       />
       <div
         className="relative flex w-full flex-row flex-nowrap items-stretch overflow-hidden bg-black"
-        style={{ height: 'calc(100vh - 52px' }}
+        style={{ height: contentHeight }}
       >
         <React.Fragment>
           {showLoadingIndicator && <LoadingIndicatorProgress className="h-full w-full bg-black" />}
